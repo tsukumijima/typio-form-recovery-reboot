@@ -28,6 +28,10 @@
             <br>
             <h3>idle</h3>
             <p>Typio needs to do some maintenance of the database sometimes. In order to keep your browsing experience smooth and snappy, it's better to do that when the computer is idle and not in use.</p>
+
+            <br>
+            <h3>alarms</h3>
+            <p>Typio uses alarms to periodically schedule database maintenance in Manifest V3. This keeps old entries cleaned up even though the background script is no longer always running.</p>
         </div>
     </div>
 </template>

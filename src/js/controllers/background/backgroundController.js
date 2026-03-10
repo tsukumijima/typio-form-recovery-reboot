@@ -5,8 +5,9 @@ import './contextMenuController.js';
 import './splashController.js';
 
 
-// In case i need it for future stuff
-chrome.storage.sync.set({version: 2});
+chrome.runtime.onInstalled.addListener(function() {
+	chrome.storage.sync.set({version: 3});
+});
 // chrome.storage.local.clear();
 
 // chrome.tabs.create({

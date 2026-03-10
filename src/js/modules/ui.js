@@ -103,7 +103,7 @@ function loadIconFont() {
 	let html = '<style>@import "' + chrome.runtime.getURL('fonts/typio/styles.css') + '";</style>';
 	innerShadowRootNode.insertAdjacentHTML('afterbegin', html);
 
-	var iconfont = new FontFace("typio", 'url('+ chrome.extension.getURL('fonts/typio/fonts/typio.woff') +')');
+	var iconfont = new FontFace("typio", 'url('+ chrome.runtime.getURL('fonts/typio/fonts/typio.woff') +')');
 	document.fonts.add(iconfont);
 
 	iconFontInjected = true;

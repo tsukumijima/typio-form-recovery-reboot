@@ -9,6 +9,20 @@ In this forked repository, my priority was to keep the dependencies updated to m
 
 Please submit feedback or bugs on the [Issues](https://github.com/tsukumijima/typio-form-recovery-reboot/issues) page.
 
+## Manifest V3
+
+This fork now targets Chrome Extension Manifest V3. The core Typio behavior remains the same:
+
+- Typio auto-saves form input locally in `chrome.storage.local`
+- Typio can recover lost input after reloads, crashes, or accidental navigation
+- Most existing UI and workflow behavior is intentionally preserved
+
+Known limitations remain largely the same as before:
+
+- `contentEditable` fields are still best recovered through the Recovery Dialog instead of automatic restore
+- Some heavily dynamic SPA and iframe editors may behave slightly differently depending on how the site rewrites the DOM
+- Database maintenance timing is now alarm-based in Manifest V3, so cleanup timing may differ slightly from older releases
+
 ## Download
 
 An archive of pre-built Chrome extensions can be found on the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page.

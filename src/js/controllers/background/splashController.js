@@ -11,7 +11,7 @@
 		if(details.reason === 'update') {
 			chrome.storage.sync.get('splashVersion', obj => {
 				if(!obj.hasOwnProperty('splashVersion') || obj.splashVersion !== SPLASH_VERSION) {
-					const url = chrome.extension.getURL('html/splash.html');
+					const url = chrome.runtime.getURL('html/splash.html');
 					chrome.tabs.create({
 						url: url
 					})

@@ -1,6 +1,9 @@
 const defaultOptions = {};
 
 var def = {}
+const platform = typeof navigator !== 'undefined' && typeof navigator.platform === 'string'
+	? navigator.platform.toLowerCase()
+	: '';
 
 def.savePasswords = false;
 def.saveCreditCards = false;
@@ -18,7 +21,7 @@ def.qaEnableSessionSubmenu = true;
 def.hideContextItems = false;
 
 // Mac specific
-if(window.navigator.platform.toLowerCase().indexOf('mac') !== -1) {
+if(platform.indexOf('mac') !== -1) {
 	def.keybindToggleRecDiag = 'Control + Backspace';
 	def.keybindRestorePreviousSession = 'Control + Alt + Backspace';
 	def.keybindOpenQuickAccess = 'Control + r';

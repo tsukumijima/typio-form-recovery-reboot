@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "npx webpack --watch --config webpack.dev.js",
-    "build": "npx webpack --config webpack.prod.js; rm -f ./dist.zip && (cd dist; zip -r ../dist.zip .; cd ..)"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider npx webpack --config webpack.prod.js && rm -f ./dist.zip && (cd dist && zip -r ../dist.zip .)"
   },
   "test": "echo \"Error: no test specified\" && exit 1",
   "keywords": [],
