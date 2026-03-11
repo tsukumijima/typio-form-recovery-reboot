@@ -6,9 +6,12 @@ This is an independently maintained fork of [Typio Form Recovery](https://bitbuc
 
 The original Typio Form Recovery was created by [Nicklas Sandell](https://github.com/nicklassandell) and [hosted on Bitbucket](https://bitbucket.org/nicklassandell/chrome-form-recovery). It was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa), but the original author has been inactive for several years and the extension has not received updates since 2020. The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
 
-Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality. That fork released version 4.0.0 as an unpackaged extension (not published to the Chrome Web Store), but it remains non-functional due to incomplete migration issues and has been largely unmaintained since.
+Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality.
+That fork released version 4.0.0 as an unpackaged extension (not published to the Chrome Web Store), but it remains non-functional due to incomplete migration issues and has been largely unmaintained since.
 
-This repository is a continuation based on the last stable Vue 2.x codebase. Our priority is to keep the extension working reliably while maintaining compatibility with modern Chrome. As of version 5.0.0, this fork has been migrated to Manifest V3 and Webpack 5.
+This repository is a continuation based on the last stable Vue 2.x codebase.
+Our priority is to keep the extension working reliably while maintaining compatibility with modern Chrome.
+As of version 5.0.0, this fork has been migrated to Manifest V3 and Webpack 5.
 To avoid version number conflicts with the ctsstc fork (which used 4.0.0), this fork starts at version 5.0.0.
 
 Please submit feedback or bugs on the [Issues](https://github.com/tsukumijima/typio-form-recovery-reboot/issues) page.
@@ -93,7 +96,7 @@ If you prefer to build the extension yourself:
 - Fix: "TypeError: _vm.getEventTarget is not a function"
 - Change: Upgrade dependencies
 
-### Version 3.2.5 (16th February, 2023)
+### Version 3.2.5 (16th February, 2023) — "Reboot" version starts here
 - Fix: `Uncaught TypeError: Cannot read properties of undefined (reading '0')`. In Chrome v109 (Jan. 2023 Release) `event.path` was deprecated and replaced with `event.composedPath()`. This fixes that across the codebase by utilizing a new `getEventTarget` helper function to centralize the fix.
 
 ### Version 3.2.4 (27th September, 2020)
