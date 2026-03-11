@@ -20,8 +20,6 @@
 </template>
 
 <script>
-    import NavigationRenderer from './NavigationRenderer.vue';
-
     export default {
         name: "NavigationRenderer",
         props: ['items', 'parent'],
@@ -29,9 +27,6 @@
             return {
                 hideTimeout: null,
             }
-        },
-        components: {
-            NavigationRenderer,
         },
         methods: {
             onMouseEnter(item) {
