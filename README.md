@@ -37,16 +37,18 @@ Known limitations remain largely the same as before:
 
 ### From the Releases page (recommended)
 
-1. Go to the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page and download `dist.zip` from the latest release
+1. Go to the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page and download `typio-form-recovery-reboot.zip` from the latest release
 2. Unzip the archive to a folder on your computer
 3. Open `chrome://extensions` in Chrome
-4. Enable **Developer mode** using the toggle in the top-right corner
-5. Click **Load unpacked** and select the unzipped folder
+4. Enable **[Developer mode]** using the toggle in the top-right corner
+5. Click **[Load unpacked]** and select the unzipped folder
 6. Typio Form Recovery Reboot is now installed and active on all pages
 
-> **Note:** Do not delete the unzipped folder after installation. Chrome references it directly, and removing it will break the extension.
+> [!IMPORTANT]  
+> Do not delete the unzipped folder after installation. Chrome references it directly, and removing it will break the extension.
 
-> **Note:** Since this extension is sideloaded (not installed from the Chrome Web Store), Chrome may show a warning about developer mode extensions on startup. This is normal and can be dismissed.
+> [!NOTE]  
+> Since this extension is sideloaded (not installed from the Chrome Web Store), Chrome may show a warning about developer mode extensions on startup. This is normal and can be dismissed.
 
 ### Building from source
 
