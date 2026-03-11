@@ -69,7 +69,8 @@ function checkForCombo(event) {
 Events.on('keydown', function(e) {
 	if(e.key === undefined) return;
 
-	var lowcase = e.key.toLowerCase();
+	// Normalize non-alphabetic key names to match the stored combo format
+	var lowcase = (e.key === ' ' ? 'Space' : e.key).toLowerCase();
 
 	if(pressed.indexOf(lowcase) === -1) {
 		pressed.push(lowcase);

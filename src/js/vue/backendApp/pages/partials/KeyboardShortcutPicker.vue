@@ -38,7 +38,9 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                const key = e.key;
+                // Normalize non-alphabetic key names so they survive the
+                // alphabetic-only regex in comoStrToArray (keyboardShortcuts.js)
+                const key = e.key === ' ' ? 'Space' : e.key;
 
                 if(this.pressedKeys.includes(key)) {
                     return;
