@@ -1,10 +1,10 @@
 # Typio Form Recovery Reboot
 
-This is an independently maintained fork of [Typio Form Recovery](https://github.com/nicklassandell/typio-form-recovery), a Chrome extension that auto-saves form input and recovers lost text.
+This is an independently maintained fork of [Typio Form Recovery](https://bitbucket.org/nicklassandell/chrome-form-recovery), a Chrome extension that auto-saves form input and recovers lost text.
 
 ## Background
 
-The original [Typio Form Recovery](https://github.com/nicklassandell/typio-form-recovery) was created by [Nicklas Sandell](https://github.com/nicklassandell) and published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa). However, the original author has been inactive for several years and the extension has not received updates since 2020. The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
+The original Typio Form Recovery was created by [Nicklas Sandell](https://github.com/nicklassandell) and [hosted on Bitbucket](https://bitbucket.org/nicklassandell/chrome-form-recovery). It was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa), but the original author has been inactive for several years and the extension has not received updates since 2020. The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
 
 Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality. That fork released version 4.0.0 as an unpackaged extension (not published to the Chrome Web Store), but it remains non-functional due to incomplete migration issues and has been largely unmaintained since.
 
@@ -33,9 +33,29 @@ Known limitations remain largely the same as before:
 - Some heavily dynamic SPA and iframe editors may behave slightly differently depending on how the site rewrites the DOM
 - Database maintenance timing is now alarm-based in Manifest V3, so cleanup timing may differ slightly from older releases
 
-## Download
+## Installation
 
-An archive of pre-built Chrome extensions can be found on the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page.
+### From the Releases page (recommended)
+
+1. Go to the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page and download `dist.zip` from the latest release
+2. Unzip the archive to a folder on your computer
+3. Open `chrome://extensions` in Chrome
+4. Enable **Developer mode** using the toggle in the top-right corner
+5. Click **Load unpacked** and select the unzipped folder
+6. Typio Form Recovery Reboot is now installed and active on all pages
+
+> **Note:** Do not delete the unzipped folder after installation. Chrome references it directly, and removing it will break the extension.
+
+> **Note:** Since this extension is sideloaded (not installed from the Chrome Web Store), Chrome may show a warning about developer mode extensions on startup. This is normal and can be dismissed.
+
+### Building from source
+
+If you prefer to build the extension yourself:
+
+1. Clone this repository
+2. Run `npm install` to install dependencies
+3. Run `npm run build` to create a production build in the `dist/` directory
+4. Follow steps 3-5 from the instructions above, selecting the `dist/` folder
 
 ## Changelog
 
