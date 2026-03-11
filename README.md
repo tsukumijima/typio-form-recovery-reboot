@@ -1,17 +1,20 @@
-# Typio Form Recovery
+# Typio Form Recovery Reboot
 
-This repository is the source code for a modified version of [Typio Form Recovery](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa), which was long broken due to the discontinuation of the `Event.path` API in Chrome 109.  
+This repository is the source code for a modified version of [Typio Form Recovery](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa).
 
 The original repository is at https://github.com/ctsstc/typio-form-recovery-reboot, but due to the upgrade to Vue 3.x and other reckless changes, some of the code that used to work no longer works.  
 Given the number of changes from Vue 2.x -> 3.x, the magnitude of the changes, and my lack of familiarity with this code, it does not seem practical to switch to Vue 3.x.
 
 In this forked repository, my priority was to keep the dependencies updated to minor versions and keep the usability as before.
+Since Chrome deprecated Manifest V2 extensions in 2025, this fork has been migrated to Manifest V3 as of version 4.0.0.
 
 Please submit feedback or bugs on the [Issues](https://github.com/tsukumijima/typio-form-recovery-reboot/issues) page.
 
 ## Manifest V3
 
-This fork now targets Chrome Extension Manifest V3. The core Typio behavior remains the same:
+As of version 4.0.0, this fork targets Chrome Extension Manifest V3. Chrome fully removed support for Manifest V2 extensions in 2025, making this migration necessary.
+
+The core Typio behavior remains the same:
 
 - Typio auto-saves form input locally in `chrome.storage.local`
 - Typio can recover lost input after reloads, crashes, or accidental navigation
@@ -28,6 +31,28 @@ Known limitations remain largely the same as before:
 An archive of pre-built Chrome extensions can be found on the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page.
 
 ## Changelog
+
+### Version 4.0.0 (12th March, 2026)
+- Change: Migrated from Manifest V2 to Manifest V3
+  - Background page (`persistent: true`) replaced with a service worker
+  - `chrome.extension.getURL` replaced with `chrome.runtime.getURL`
+  - `browser_action` replaced with `action`
+  - `<all_urls>` moved from `permissions` to `host_permissions`
+  - `web_accessible_resources` updated to MV3 object format
+  - `chrome.idle.onStateChanged` listener replaced with `chrome.alarms` + `chrome.idle.queryState` (service workers cannot use persistent listeners)
+  - Context menus are now rebuilt on `onInstalled` and `onStartup` to survive service worker restarts
+  - Added `alarms` permission for periodic database maintenance scheduling
+- Change: Upgraded build toolchain from Webpack 4 to Webpack 5
+  - Removed `NODE_OPTIONS=--openssl-legacy-provider` workaround (no longer needed with Webpack 5)
+  - Replaced `strip-loader` with TerserPlugin `pure_funcs` for `console.log` / `console.trace` removal
+  - Replaced `minify-html-webpack-plugin` with `copy-webpack-plugin`
+  - Removed unused `file-loader` and `to-string-loader`
+- Fix: Domain blacklist wildcard matching only escaped the first dot in patterns (e.g. `*.example.com`)
+- Fix: Editable element cache failed to remove stale DOM nodes (affected sites like Twitter that replace DOM elements)
+- Fix: `SessionList.merge()` failed to merge entries for existing sessions due to incorrect property access
+- Fix: `options.set()` crashed with `ReferenceError` when called with a non-existent option name
+- Fix: Incorrect comment "Delete entire field if empty" corrected to "Delete entire domain if empty"
+- Fix: Missing `.length` in `Object.keys()` comparison for empty domain check in maintenance routine
 
 ### Version 3.3.0 (12th March, 2023)
 - Fix: Text box style collapse when using dark mode
@@ -206,7 +231,7 @@ This update has been in the works for quite a while and brings lots of exciting 
 - New: Delete entry button removed from context menu to decrease clutter. Entries can be deleted in recovery dialog instead.
 - New: Added support for "select" dropdowns
 - Fixed: Saved passwords even when option was set to disabled in some cases
-- Fixed: "Delete all" should delete all except for current session
+- Fixed: "Delete all" should delete all entries, including current session
 - Fixed: Max storage days is now one year (bug prevented setting higher than 7 days)
 - Fixed: Better icon for "recover only this field" option in context menu
 
