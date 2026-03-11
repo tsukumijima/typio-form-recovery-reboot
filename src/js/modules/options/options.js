@@ -12,7 +12,7 @@ options.set = function(opt, val) {
 
 	if(!globalOptions.hasOwnProperty(opt)) {
 		console.error(opt, ' was not saved because the option does not exist')
-		delete options[key];
+		return;
 	}
 
 	chrome.storage.sync.set({ [opt] : val });

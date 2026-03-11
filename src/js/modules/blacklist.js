@@ -82,7 +82,7 @@ function isBlocked(list, url) {
 
 	function wildcardCheck(pattern, hostname) {
 		try {
-			let regex = new RegExp( pattern.replace('.', '\.?').replace('*', '.*?') );
+			let regex = new RegExp('^' + pattern.replace(/\./g, '\\.').replace(/\*/g, '.*') + '$');
 			if(regex.test(hostname)) {
 				return true;
 			}

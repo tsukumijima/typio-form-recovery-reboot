@@ -133,8 +133,9 @@ export default class SessionList {
 
 		for (let sid in list) {
 			if (tmp.hasOwnProperty(sid)) {
-				for (let eid in list[sid][eid]) {
-					tmp[sid][eid] = list[sid][eid];
+				// Merge entries with the same session ID
+				for (let eid in list[sid].entries) {
+					tmp[sid].entries[eid] = list[sid].entries[eid];
 				}
 			} else {
 				tmp[sid] = list[sid];

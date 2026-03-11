@@ -53,10 +53,10 @@ function getEditable(el, onlyTextEditable=false) {
 		// If a cached el was replaced with an existing one with the same
 		// path (as happens on twitter when composing new posts), delete the
 		// existing cache reference and make sure to re-generate the editable session id.
-		editableCache.forEach(cachedEd => {
+		editableCache.forEach((cachedEd, el) => {
 			if(cachedEd.el.ownerDocument.body.contains(cachedEd.el) === false) {
 				console.log('deleting nonexisting node', cachedEd.el);
-				editableCache.delete(cachedEd);
+				editableCache.delete(el);
 				isReplacement = true;
 			}
 		})
