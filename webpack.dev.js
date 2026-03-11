@@ -3,5 +3,6 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common,{
     mode: 'development',
-    devtool: 'false', // Disable default "eval" due to browser restrictions
+    // In Chrome extensions, eval cannot be used, so source map is disabled
+    devtool: false,
 });

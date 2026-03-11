@@ -1,6 +1,5 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const MinifyHtmlWebpackPlugin = require('minify-html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -47,17 +46,6 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new MinifyHtmlWebpackPlugin({
-            src: './src/html',
-            dest: './dist/html',
-            rules: {
-                collapseBooleanAttributes: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true,
-                removeComments: true,
-                minifyJS: true,
-            },
-        }),
         new CopyPlugin({
             patterns: [
                 {
@@ -73,6 +61,11 @@ module.exports = {
                     from: '**/*',
                     to: path.resolve(__dirname, './dist/fonts'),
                     context: 'src/fonts/',
+                },
+                {
+                    from: '**/*',
+                    to: path.resolve(__dirname, './dist/html'),
+                    context: 'src/html/',
                 },
             ],
         }),
