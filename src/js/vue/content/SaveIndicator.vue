@@ -1,6 +1,6 @@
 <template>
     <div id="save-indicator"
-         title="This is the save indicator for Typio Form Recovery. Disable or change indicator style in the settings.">
+         title="This is the save indicator for Typio Form Recovery Reboot. Disable or change indicator style in the settings.">
         <div class="animator"></div>
     </div>
 </template>

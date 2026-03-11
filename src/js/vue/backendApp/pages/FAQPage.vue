@@ -22,7 +22,7 @@
                 <p>Typio separates the data for each domain into individual storage buckets. That means that if you type something on foo.example.com you will not be able to view the data on bar.example.com. If you cannot find your data, make sure to double check you are on the same domain as where you typed it. This is easy to miss on sites like tumblr.com where each profile has its own subdomain, or craigslist, where each advertisement gets its own subdomain.</p>
 
                 <h3>Still lost?</h3>
-                <p>If you still can't find the data, try to reproduce the steps and <a href="feedback.html">file a bug report</a>.</p>
+                <p>If you still can't find the data, try to reproduce the steps and <a target="_blank" href="https://github.com/tsukumijima/typio-form-recovery-reboot/issues/new">file a bug report</a>.</p>
             </div>
         </div>
 

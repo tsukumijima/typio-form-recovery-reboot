@@ -1,6 +1,6 @@
 <template>
     <div class="navigation">
-        <p class="title">Typio Form Recovery</p>
+        <p class="title">Typio Form Recovery Reboot</p>
 
         <navigation-renderer :items="menuItems"></navigation-renderer>
     </div>

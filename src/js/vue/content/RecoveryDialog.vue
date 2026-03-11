@@ -4,14 +4,14 @@
 
             <div class="header">
                 <div class="top-bar">
-                    <p>Typio Form Recovery</p>
+                    <p>Typio Form Recovery Reboot</p>
                     <button class="icon-close" v-on:click="hide()"></button>
                 </div>
                 <div class="primary">
                     <div class="left">
                         Recover {{ hostname }}
                     </div>
-                    <button class="toolbar-icon" v-on:click="openDonationLink()"><span class="icon-heart"></span>Support development</button>
+                    <!-- <button class="toolbar-icon" v-on:click="openDonationLink()"><span class="icon-heart"></span>Support development</button> -->
                     <button class="toolbar-icon" v-on:click="wipeData()"><span class="icon-trash"></span>Delete all data</button>
                     <button class="toolbar-icon" v-on:click="disableSite()"><span class="icon-block"></span>Disable on this site</button>
                     <button class="toolbar-icon" v-on:click="openOptions()"><span class="icon-gear"></span>Open options</button>

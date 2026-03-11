@@ -5,25 +5,25 @@
         <div class="card">
             <h2>Request a feature</h2>
 
-            <p>Have an idea how to improve Typio? <a target="_blank" href="https://bitbucket.org/nicklassandell/chrome-form-recovery/issues/new">Tell me about it!</a></p>
+            <p>Have an idea how to improve Typio? <a target="_blank" href="https://github.com/tsukumijima/typio-form-recovery-reboot/issues/new">Tell us about it!</a></p>
 
             <br>
             <h2>Report an issue</h2>
 
-            <p>If you encounter any issues with Typio, please let me know. In order for me to fix the issue it is important that you provide as much details as possible in your report. I need to be able to reproduce the issue to find the cause of it. Please include the following in your report:</p>
+            <p>If you encounter any issues with Typio, please let us know. In order for us to fix the issue it is important that you provide as much details as possible in your report. We need to be able to reproduce the issue to find the cause of it. Please include the following in your report:</p>
 
             <p>What steps did you take to trigger the problem?</p>
             <p>Direct link to a page where the problem can be reproduced.</p>
             <p>If it is a visual bug, screenshots are appreciated.</p>
-            <p>If you are not using Google Chrome, tell me which browser and which version.</p>
-            <p><a target="_blank" href="https://bitbucket.org/nicklassandell/chrome-form-recovery/issues/new">Open a ticket</a>. Remember to be nice.</p>
+            <p>If you are not using Google Chrome, tell us which browser and which version.</p>
+            <p><a target="_blank" href="https://github.com/tsukumijima/typio-form-recovery-reboot/issues/new">Open a ticket</a> on GitHub.</p>
 
             <br>
-            <h2>Anything else?</h2>
+            <h2>Acknowledgments</h2>
 
-            <p>You can also reach me on Twitter <a target="_blank" href="https://twitter.com/TypioRecovery">@TypioRecovery</a> or send me an email at
-                <a href="mailto:typiorecovery@gmail.com" target="_blank">typiorecovery@gmail.com</a>.</p>
-            <p>If you enjoy using Typio, you can <a target="_blank" href="https://www.buymeacoffee.com/typio">buy me a coffee</a>.</p>
+            <p>Typio Form Recovery was originally created by <a target="_blank" href="https://github.com/nicklassandell">Nicklas Sandell</a>.
+                This Reboot version is independently maintained and continued from the original codebase.</p>
+            <!-- <p>You can support the original author by <a target="_blank" href="https://www.buymeacoffee.com/typio">buying them a coffee</a>.</p> -->
         </div>
 
     </div>

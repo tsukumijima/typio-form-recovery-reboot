@@ -9,7 +9,7 @@
             <router-view class="page-container"></router-view>
         </div>
 
-        <donate-hint></donate-hint>
+        <!-- <donate-hint></donate-hint> -->
 
     </div>
 </template>
