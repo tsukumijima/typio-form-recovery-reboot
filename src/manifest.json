@@ -1,10 +1,10 @@
 {
     "manifest_version": 3,
 
-    "name": "Typio Form Recovery",
+    "name": "Typio Form Recovery Reboot",
     "short_name": "Typio",
     "description": "Autosave, everywhere. Recover lost form input with ease!",
-    "version": "3.3.0",
+    "version": "5.0.0",
     "icons": {
         "16": "img/icon16.png",
         "48": "img/icon48.png",
@@ -74,7 +74,7 @@
             "16": "img/icon16.png",
             "38": "img/icon38.png"
         },
-        "default_title": "Typio Form recovery",
+        "default_title": "Typio Form Recovery Reboot",
         "default_popup": "html/popup.html"
     }
 }

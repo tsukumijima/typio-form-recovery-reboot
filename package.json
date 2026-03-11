@@ -1,11 +1,11 @@
 {
   "name": "typio-form-recovery",
-  "version": "3.3.0",
+  "version": "5.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "watch": "npx webpack --watch --config webpack.dev.js",
-    "build": "npx webpack --config webpack.prod.js && rm -f ./dist.zip && (cd dist && zip -r ../dist.zip .)"
+    "build": "npx webpack --config webpack.prod.js && rm -f ./typio-form-recovery-reboot.zip && (cd dist && zip -r ../typio-form-recovery-reboot.zip .)"
   },
   "test": "echo \"Error: no test specified\" && exit 1",
   "keywords": [],
