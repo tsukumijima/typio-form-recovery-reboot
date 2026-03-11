@@ -1,18 +1,25 @@
 # Typio Form Recovery Reboot
 
-This repository is the source code for a modified version of [Typio Form Recovery](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa).
+This is an independently maintained fork of [Typio Form Recovery](https://github.com/nicklassandell/typio-form-recovery), a Chrome extension that auto-saves form input and recovers lost text.
 
-The original repository is at https://github.com/ctsstc/typio-form-recovery-reboot, but due to the upgrade to Vue 3.x and other reckless changes, some of the code that used to work no longer works.  
-Given the number of changes from Vue 2.x -> 3.x, the magnitude of the changes, and my lack of familiarity with this code, it does not seem practical to switch to Vue 3.x.
+## Background
 
-In this forked repository, my priority was to keep the dependencies updated to minor versions and keep the usability as before.
-Since Chrome deprecated Manifest V2 extensions in 2025, this fork has been migrated to Manifest V3 as of version 4.0.0.
+The original [Typio Form Recovery](https://github.com/nicklassandell/typio-form-recovery) was created by [Nicklas Sandell](https://github.com/nicklassandell) and published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa). However, the original author has been inactive for several years and the extension has not received updates since 2020. The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
+
+Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality. That fork released version 4.0.0 as an unpackaged extension (not published to the Chrome Web Store), but it remains non-functional due to incomplete migration issues and has been largely unmaintained since.
+
+This repository is a continuation based on the last stable Vue 2.x codebase. Our priority is to keep the extension working reliably while maintaining compatibility with modern Chrome. As of version 5.0.0, this fork has been migrated to Manifest V3 and Webpack 5.
+To avoid version number conflicts with the ctsstc fork (which used 4.0.0), this fork starts at version 5.0.0.
 
 Please submit feedback or bugs on the [Issues](https://github.com/tsukumijima/typio-form-recovery-reboot/issues) page.
 
+## Acknowledgments
+
+Typio Form Recovery was originally created by [Nicklas Sandell](https://github.com/nicklassandell). This Reboot version would not exist without the excellent foundation of the original extension. We are grateful for the years of work that went into building Typio.
+
 ## Manifest V3
 
-As of version 4.0.0, this fork targets Chrome Extension Manifest V3. Chrome fully removed support for Manifest V2 extensions in 2025, making this migration necessary.
+As of version 5.0.0, this fork targets Chrome Extension Manifest V3. Chrome fully removed support for Manifest V2 extensions in 2025, making this migration necessary.
 
 The core Typio behavior remains the same:
 
@@ -32,7 +39,7 @@ An archive of pre-built Chrome extensions can be found on the [Releases](https:/
 
 ## Changelog
 
-### Version 4.0.0 (12th March, 2026)
+### Version 5.0.0 (12th March, 2026)
 - Change: Migrated from Manifest V2 to Manifest V3
   - Background page (`persistent: true`) replaced with a service worker
   - `chrome.extension.getURL` replaced with `chrome.runtime.getURL`
@@ -53,6 +60,11 @@ An archive of pre-built Chrome extensions can be found on the [Releases](https:/
 - Fix: `options.set()` crashed with `ReferenceError` when called with a non-existent option name
 - Fix: Incorrect comment "Delete entire field if empty" corrected to "Delete entire domain if empty"
 - Fix: Missing `.length` in `Object.keys()` comparison for empty domain check in maintenance routine
+- Fix: NavigationRenderer recursive component caused `ReferenceError` under Webpack 5 due to self-import TDZ
+- Fix: Space key could not be assigned as a keyboard shortcut (non-alphabetic key name was stripped by regex)
+- Change: Renamed extension from "Typio Form Recovery" to "Typio Form Recovery Reboot"
+- Change: Updated feedback and issue links to point to the new GitHub repository
+- Change: Commented out original author's donation links (Buy Me a Coffee)
 
 ### Version 3.3.0 (12th March, 2023)
 - Fix: Text box style collapse when using dark mode
