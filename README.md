@@ -1,5 +1,7 @@
 # Typio Form Recovery Reboot
 
+<img width="100%" alt="Image" src="https://github.com/user-attachments/assets/bf980ca3-7a35-4227-8dba-d9a6fb5416d6" />
+
 This is an independently maintained fork of [Typio Form Recovery](https://bitbucket.org/nicklassandell/chrome-form-recovery), a Chrome extension that auto-saves form input and recovers lost text.
 
 ## Background
@@ -48,7 +50,8 @@ Known limitations remain largely the same as before:
 6. Typio Form Recovery Reboot is now installed and active on all pages
 
 > [!IMPORTANT]  
-> Do not delete the unzipped folder after installation. Chrome references it directly, and removing it will break the extension.
+> Do not delete the unzipped folder after installation.  
+> Chrome references it directly, and removing it will break the extension.
 
 > [!NOTE]  
 > Since this extension is sideloaded (not installed from the Chrome Web Store), Chrome may show a warning about developer mode extensions on startup. This is normal and can be dismissed.
