@@ -6,13 +6,14 @@ This is an independently maintained fork of [Typio Form Recovery](https://bitbuc
 
 ## Background
 
-The original Typio Form Recovery was created by [Nicklas Sandell](https://github.com/nicklassandell) and [hosted on Bitbucket](https://bitbucket.org/nicklassandell/chrome-form-recovery). It was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa), but the original author has been inactive for several years and the extension has not received updates since 2020. The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
+The original Typio Form Recovery was created by [Nicklas Sandell](https://github.com/nicklassandell) and [hosted on Bitbucket](https://bitbucket.org/nicklassandell/chrome-form-recovery). It was published on the [Chrome Web Store](https://chrome.google.com/webstore/detail/typio-form-recovery/djkbihbnjhkjahbhjaadbepppbpoedaa), but the original author has been inactive for several years and the extension has not received updates since 2020.  
+The Chrome Web Store listing has since been removed due to Chrome's deprecation and removal of Manifest V2 extensions in 2025.
 
-Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality.
+Another fork at [ctsstc/typio-form-recovery-reboot](https://github.com/ctsstc/typio-form-recovery-reboot) attempted to continue development, but its upgrade to Vue 3.x introduced regressions that broke existing functionality.  
 That fork released version 4.0.0 as an unpackaged extension (not published to the Chrome Web Store), but it remains non-functional due to incomplete migration issues and has been largely unmaintained since.
 
-This repository is a continuation based on the last stable Vue 2.x codebase.
-Our priority is to keep the extension working reliably while maintaining compatibility with modern Chrome.
+This repository is a continuation based on the last stable Vue 2.x codebase.  
+Our priority is to keep the extension working reliably while maintaining compatibility with modern Chrome.  
 As of version 5.0.0, this fork has been migrated to Manifest V3 and Webpack 5.
 To avoid version number conflicts with the ctsstc fork (which used 4.0.0), this fork starts at version 5.0.0.
 
@@ -20,11 +21,13 @@ Please submit feedback or bugs on the [Issues](https://github.com/tsukumijima/ty
 
 ## Acknowledgments
 
-Typio Form Recovery was originally created by [Nicklas Sandell](https://github.com/nicklassandell). This Reboot version would not exist without the excellent foundation of the original extension. We are grateful for the years of work that went into building Typio.
+Typio Form Recovery was originally created by [Nicklas Sandell](https://github.com/nicklassandell). This Reboot version would not exist without the excellent foundation of the original extension.   
+We are grateful for the years of work that went into building Typio.
 
 ## Manifest V3
 
-As of version 5.0.0, this fork targets Chrome Extension Manifest V3. Chrome fully removed support for Manifest V2 extensions in 2025, making this migration necessary.
+As of version 5.0.0, this fork targets Chrome Extension Manifest V3.  
+Chrome fully removed support for Manifest V2 extensions in 2025, making this migration necessary.
 
 The core Typio behavior remains the same:
 
@@ -40,7 +43,16 @@ Known limitations remain largely the same as before:
 
 ## Installation
 
-### From the Releases page (recommended)
+### [NEW!] From the Chrome Web Store (Recommended)
+
+<img width="100%" alt="Chrome Web Store" src="https://github.com/user-attachments/assets/2a4a5b1f-0909-49bd-b973-00543a84732a" /><br>
+
+Since v5.0.0, Typio Form Recovery is available for installation from the [Chrome Web Store](https://chromewebstore.google.com/detail/hendjokhdihlhddjfjmenakapnhcaflg?utm_source=item-share-cb) again after two years!
+
+1. Go to the [Chrome Web Store](https://chromewebstore.google.com/detail/hendjokhdihlhddjfjmenakapnhcaflg?utm_source=item-share-cb) page and click **[Add to Chrome]**
+2. Typio Form Recovery Reboot is now installed and active on all pages
+
+### From the Releases page
 
 1. Go to the [Releases](https://github.com/tsukumijima/typio-form-recovery-reboot/releases) page and download `typio-form-recovery-reboot.zip` from the latest release
 2. Unzip the archive to a folder on your computer
